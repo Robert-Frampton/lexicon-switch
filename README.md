@@ -1,6 +1,6 @@
-# lexicon-toggle
+# lexicon-switch
 
-Lexicon Toggle Component
+Lexicon Switch Component
 
 ## Setup
 
