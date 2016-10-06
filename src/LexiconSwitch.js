@@ -19,25 +19,15 @@ class LexiconSwitch extends Component {
  */
 LexiconSwitch.STATE = {
 	/**
-	 * Font Awesome icon (CSS class) that displays on the switch handle when off.
+	 * Font Awesome icons (CSS class) that display on switch handle.
 	 * @default undefined
 	 * @instance
 	 * @memberof LexiconSwitch
-	 * @type {string}
+	 * @type {object}
+	 * @type {!{off: string, on: string}}
 	 */
-	buttonIconOff: {
-		validator: core.isString
-	},
-
-	/**
-	 * Font Awesome icon (CSS class) that displays on the switch handle when on.
-	 * @default undefined
-	 * @instance
-	 * @memberof LexiconSwitch
-	 * @type {string}
-	 */
-	buttonIconOn: {
-		validator: core.isString
+	buttonIcons: {
+		validator: core.isObject
 	},
 
 	/**
@@ -65,69 +55,25 @@ LexiconSwitch.STATE = {
 	},
 
 	/**
-	 * Additional helper text that is displayed above the switch.
+	 * Additional helper text that can be displayed on all sides of the switch.
 	 * @default undefined
 	 * @instance
 	 * @memberof LexiconSwitch
-	 * @type {string}
+	 * @type {!{bottom: string, left: string, right: string, top: string}}
 	 */
 	helperText: {
-		validator: core.isString
+		validator: core.isObject
 	},
 
 	/**
-	 * Additional helper text that is displayed below the switch.
+	 * Font Awesome icons (CSS class) that display on switch bar.
 	 * @default undefined
 	 * @instance
 	 * @memberof LexiconSwitch
-	 * @type {string}
+	 * @type {!{off: string, on: string}}
 	 */
-	helperTextBottom: {
-		validator: core.isString
-	},
-
-	/**
-	 * Additional helper text that is displayed to the left of the switch.
-	 * @default undefined
-	 * @instance
-	 * @memberof LexiconSwitch
-	 * @type {string}
-	 */
-	helperTextLeft: {
-		validator: core.isString
-	},
-
-	/**
-	 * Additional helper text that is displayed to the right the switch.
-	 * @default undefined
-	 * @instance
-	 * @memberof LexiconSwitch
-	 * @type {string}
-	 */
-	helperTextRight: {
-		validator: core.isString
-	},
-
-	/**
-	 * Font Awesome icon (CSS class) that is displayed on switch bar when off.
-	 * @default undefined
-	 * @instance
-	 * @memberof LexiconSwitch
-	 * @type {string}
-	 */
-	iconOff: {
-		validator: core.isString
-	},
-
-	/**
-	 * Font Awesome icon (CSS class) that is displayed on switch bar when on.
-	 * @default undefined
-	 * @instance
-	 * @memberof LexiconSwitch
-	 * @type {string}
-	 */
-	iconOn: {
-		validator: core.isString
+	icons: {
+		validator: core.isObject
 	},
 
 	/**
@@ -142,35 +88,13 @@ LexiconSwitch.STATE = {
 	},
 
 	/**
-	 * Label that is rendered above the switch.
+	 * Main label that is rendered above the switch.
 	 * @default undefined
 	 * @instance
 	 * @memberof LexiconSwitch
 	 * @type {string}
 	 */
 	label: {
-		validator: core.isString
-	},
-
-	/**
-	 * Label that is displayed to the side of the switch when off.
-	 * @default undefined
-	 * @instance
-	 * @memberof LexiconSwitch
-	 * @type {string}
-	 */
-	labelOff: {
-		validator: core.isString
-	},
-
-	/**
-	 * Label that is displayed to the side of the switch when on.
-	 * @default undefined
-	 * @instance
-	 * @memberof LexiconSwitch
-	 * @type {string}
-	 */
-	labelOn: {
 		validator: core.isString
 	},
 
@@ -183,6 +107,17 @@ LexiconSwitch.STATE = {
 	 */
 	name: {
 		validator: core.isString
+	},
+
+	/**
+	 * Labels that display when switch is checked or unchecked.
+	 * @default undefined
+	 * @instance
+	 * @memberof LexiconSwitch
+	 * @type {!{off: string, on: string}}
+	 */
+	statusLabels: {
+		validator: core.isObject
 	}
 };
 

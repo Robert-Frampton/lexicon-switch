@@ -4,22 +4,16 @@
  * This renders a switch element based on the lexicon switch definition
  * found at http://liferay.github.io/lexicon/content/toggles/
  *
- * @param? buttonIconOff
- * @param? buttonIconOn
+ * @param? buttonIcons
  * @param? checked
  * @param? disabled
  * @param? elementClasses
  * @param? helperText
- * @param? helperTextBottom
- * @param? helperTextLeft
- * @param? helperTextRight
- * @param? iconOff
- * @param? iconOn
+ * @param? icons
  * @param? id
  * @param? label
- * @param? labelOff
- * @param? labelOn
  * @param name
+ * @param? statusLabels
  */
 {template .render}
 	<div class="form-group{$elementClasses ? ' ' + $elementClasses : ''}">
@@ -47,50 +41,50 @@
 				<span class="toggle-switch-label">{$label}</span>
 			{/if}
 
-			{if isNonnull($helperText)}
-				<span class="toggle-switch-text">{$helperText}</span>
+			{if isNonnull($helperText) and $helperText.top}
+				<span class="toggle-switch-text">{$helperText.top}</span>
 			{/if}
 
-			{if isNonnull($helperTextLeft)}
-				<span class="toggle-switch-text toggle-switch-text-left">{$helperTextLeft}</span>
+			{if isNonnull($helperText) and $helperText.left}
+				<span class="toggle-switch-text toggle-switch-text-left">{$helperText.left}</span>
 			{/if}
 
 			<span aria-hidden="true" class="toggle-switch-bar">
 				<span
 					class="toggle-switch-handle"
 
-					{if isNonnull($labelOff)}
-						data-label-off="{$labelOff}"
+					{if isNonnull($statusLabels) and $statusLabels.off}
+						data-label-off="{$statusLabels.off}"
 					{/if}
 
-					{if isNonnull($labelOn)}
-						data-label-on="{$labelOn}"
+					{if isNonnull($statusLabels) and $statusLabels.on}
+						data-label-on="{$statusLabels.on}"
 					{/if}
 				>
-					{if isNonnull($buttonIconOff)}
-						<span class="button-icon button-icon-off {$buttonIconOff} toggle-switch-icon"></span>
+					{if isNonnull($buttonIcons) and $buttonIcons.off}
+						<span class="button-icon button-icon-off {$buttonIcons.off} toggle-switch-icon"></span>
 					{/if}
 
-					{if isNonnull($buttonIconOn)}
-						<span class="button-icon button-icon-on {$buttonIconOn} toggle-switch-icon"></span>
+					{if isNonnull($buttonIcons) and $buttonIcons.on}
+						<span class="button-icon button-icon-on {$buttonIcons.on} toggle-switch-icon"></span>
 					{/if}
 
-					{if isNonnull($iconOff)}
-						<span class="{$iconOff} toggle-switch-icon toggle-switch-icon-off"></span>
+					{if isNonnull($icons) and $icons.off}
+						<span class="{$icons.off} toggle-switch-icon toggle-switch-icon-off"></span>
 					{/if}
 
-					{if isNonnull($iconOn)}
-						<span class="{$iconOn} toggle-switch-icon toggle-switch-icon-on"></span>
+					{if isNonnull($icons) and $icons.on}
+						<span class="{$icons.on} toggle-switch-icon toggle-switch-icon-on"></span>
 					{/if}
 				</span>
 			</span>
 
-			{if isNonnull($helperTextRight)}
-				<span class="toggle-switch-text toggle-switch-text-right">{$helperTextRight}</span>
+			{if isNonnull($helperText) and $helperText.right}
+				<span class="toggle-switch-text toggle-switch-text-right">{$helperText.right}</span>
 			{/if}
 
-			{if isNonnull($helperTextBottom)}
-				<span class="toggle-switch-text">{$helperTextBottom}</span>
+			{if isNonnull($helperText) and $helperText.bottom}
+				<span class="toggle-switch-text">{$helperText.bottom}</span>
 			{/if}
 		</label>
 	</div>

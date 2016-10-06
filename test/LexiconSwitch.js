@@ -51,8 +51,10 @@ describe('LexiconSwitch', () => {
 
 	it('should render switch with on/off label elements', () => {
 		lexiconSwitch = new LexiconSwitch({
-			labelOff: 'Off',
-			labelOn: 'On'
+			statusLabels: {
+				off: 'Off',
+				on: 'On'
+			}
 		});
 
 		assert.strictEqual(lexiconSwitch.element.outerHTML, __html__['test/fixture/testOnOffLabelsLexiconSwitch.html']);
@@ -60,8 +62,10 @@ describe('LexiconSwitch', () => {
 
 	it('should render switch with on/off icon elements', () => {
 		lexiconSwitch = new LexiconSwitch({
-			iconOff: 'icon-remove',
-			iconOn: 'icon-ok'
+			icons: {
+				off: 'icon-remove',
+				on: 'icon-ok'
+			}
 		});
 
 		assert.strictEqual(lexiconSwitch.element.outerHTML, __html__['test/fixture/testIconsLexiconSwitch.html']);
@@ -69,8 +73,10 @@ describe('LexiconSwitch', () => {
 
 	it('should render switch with on/off button icon elements', () => {
 		lexiconSwitch = new LexiconSwitch({
-			buttonIconOff: 'icon-remove',
-			buttonIconOn: 'icon-ok'
+			buttonIcons: {
+				off: 'icon-remove',
+				on: 'icon-ok'
+			}
 		});
 
 		assert.strictEqual(lexiconSwitch.element.outerHTML, __html__['test/fixture/testButtonIconsLexiconSwitch.html']);
@@ -78,10 +84,12 @@ describe('LexiconSwitch', () => {
 
 	it('should render label and helper text elements in correct order', () => {
 		lexiconSwitch = new LexiconSwitch({
-			helperText: 'helperText',
-			helperTextBottom: 'helperTextBottom',
-			helperTextLeft: 'helperLeft',
-			helperTextRight: 'helperTextRight',
+			helperText: {
+				bottom: 'helperTextBottom',
+				left: 'helperLeft',
+				right: 'helperTextRight',
+				top: 'helperText'
+			},
 			label: 'Label'
 		});
 

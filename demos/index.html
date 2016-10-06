@@ -20,7 +20,7 @@
 		<h2>Default</h2>
 		<div id="default"></div>
 
-		<h2>On/Off Labels</h2>
+		<h2>Status Labels</h2>
 		<div id="labels"></div>
 
 		<h2>Icons</h2>
@@ -47,30 +47,38 @@
 			// On/Off Labels
 			new Lexicon.LexiconSwitch({
 				label: 'Label',
-				labelOff: 'Off',
-				labelOn: 'On'
+				statusLabels: {
+					off: 'Off',
+					on: 'On'
+				}
 			}, '#labels');
 
 			// Icons
 			new Lexicon.LexiconSwitch({
-				label: 'Label',
-				iconOff: 'icon-remove',
-				iconOn: 'icon-ok'
+				icons: {
+					off: 'icon-remove',
+					on: 'icon-ok'
+				},
+				label: 'Label'
 			}, '#icons');
 
 			// Button Icons
 			new Lexicon.LexiconSwitch({
-				label: 'Label',
-				buttonIconOff: 'icon-remove',
-				buttonIconOn: 'icon-ok'
+				buttonIcons: {
+					off: 'icon-remove',
+					on: 'icon-ok'
+				},
+				label: 'Label'
 			}, '#buttonIcons');
 
 			// Helper Text
 			new Lexicon.LexiconSwitch({
-				helperText: 'helperText',
-				helperTextBottom: 'helperTextBottom',
-				helperTextLeft: 'helperLeft',
-				helperTextRight: 'helperTextRight'
+				helperText: {
+					bottom: 'helperTextBottom',
+					left: 'helperLeft',
+					right: 'helperTextRight',
+					top: 'helperText'
+				}
 			}, '#helperText');
 
 			// Disabled
