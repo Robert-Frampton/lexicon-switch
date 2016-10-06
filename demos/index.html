@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Demo: Switch</title>
+
+		<link rel="stylesheet" href="../node_modules/lexicon-ux/build/css/lexicon-font-awesome.css">
+		<link rel="stylesheet" href="../node_modules/lexicon-ux/build/css/lexicon-base.css">
+		<script src="../build/globals/switch.js"></script>
+
+		<style>
+			body {
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Lexicon Switch Component</h1>
+
+		<h2>Default</h2>
+		<div id="default"></div>
+
+		<h2>On/Off Labels</h2>
+		<div id="labels"></div>
+
+		<h2>Icons</h2>
+		<div id="icons"></div>
+
+		<h2>Button Icons</h2>
+		<div id="buttonIcons"></div>
+
+		<h2>Helper text</h2>
+		<div id="helperText"></div>
+
+		<h2>Disabled</h2>
+		<div id="disabled"></div>
+
+		<h2>Checked</h2>
+		<div id="checked"></div>
+
+		<script type="text/javascript">
+			// Default
+			new Lexicon.LexiconSwitch({
+				label: 'Label'
+			}, '#default');
+
+			// On/Off Labels
+			new Lexicon.LexiconSwitch({
+				label: 'Label',
+				labelOff: 'Off',
+				labelOn: 'On'
+			}, '#labels');
+
+			// Icons
+			new Lexicon.LexiconSwitch({
+				label: 'Label',
+				iconOff: 'icon-remove',
+				iconOn: 'icon-ok'
+			}, '#icons');
+
+			// Button Icons
+			new Lexicon.LexiconSwitch({
+				label: 'Label',
+				buttonIconOff: 'icon-remove',
+				buttonIconOn: 'icon-ok'
+			}, '#buttonIcons');
+
+			// Helper Text
+			new Lexicon.LexiconSwitch({
+				helperText: 'helperText',
+				helperTextBottom: 'helperTextBottom',
+				helperTextLeft: 'helperLeft',
+				helperTextRight: 'helperTextRight'
+			}, '#helperText');
+
+			// Disabled
+			new Lexicon.LexiconSwitch({
+				disabled: true
+			}, '#disabled');
+
+			// Checked
+			new Lexicon.LexiconSwitch({
+				checked: true
+			}, '#checked');
+		</script>
+	</body>
+</html>

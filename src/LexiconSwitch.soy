@@ -1,0 +1,97 @@
+{namespace LexiconSwitch}
+
+/**
+ * This renders a switch element based on the lexicon switch definition
+ * found at http://liferay.github.io/lexicon/content/toggles/
+ *
+ * @param? buttonIconOff
+ * @param? buttonIconOn
+ * @param? checked
+ * @param? disabled
+ * @param? elementClasses
+ * @param? helperText
+ * @param? helperTextBottom
+ * @param? helperTextLeft
+ * @param? helperTextRight
+ * @param? iconOff
+ * @param? iconOn
+ * @param? id
+ * @param? label
+ * @param? labelOff
+ * @param? labelOn
+ * @param name
+ */
+{template .render}
+	<div class="form-group{$elementClasses ? ' ' + $elementClasses : ''}">
+		<label>
+			<input
+				{if $checked}
+					checked
+				{/if}
+
+				class="toggle-switch"
+
+				{if $disabled}
+					disabled
+				{/if}
+
+				{if isNonnull($id)}
+					id="{$id}"
+				{/if}
+
+				name="{$name}"
+				type="checkbox"
+			/>
+
+			{if isNonnull($label)}
+				<span class="toggle-switch-label">{$label}</span>
+			{/if}
+
+			{if isNonnull($helperText)}
+				<span class="toggle-switch-text">{$helperText}</span>
+			{/if}
+
+			{if isNonnull($helperTextLeft)}
+				<span class="toggle-switch-text toggle-switch-text-left">{$helperTextLeft}</span>
+			{/if}
+
+			<span aria-hidden="true" class="toggle-switch-bar">
+				<span
+					class="toggle-switch-handle"
+
+					{if isNonnull($labelOff)}
+						data-label-off="{$labelOff}"
+					{/if}
+
+					{if isNonnull($labelOn)}
+						data-label-on="{$labelOn}"
+					{/if}
+				>
+					{if isNonnull($buttonIconOff)}
+						<span class="button-icon button-icon-off {$buttonIconOff} toggle-switch-icon"></span>
+					{/if}
+
+					{if isNonnull($buttonIconOn)}
+						<span class="button-icon button-icon-on {$buttonIconOn} toggle-switch-icon"></span>
+					{/if}
+
+					{if isNonnull($iconOff)}
+						<span class="{$iconOff} toggle-switch-icon toggle-switch-icon-off"></span>
+					{/if}
+
+					{if isNonnull($iconOn)}
+						<span class="{$iconOn} toggle-switch-icon toggle-switch-icon-on"></span>
+					{/if}
+				</span>
+			</span>
+
+			{if isNonnull($helperTextRight)}
+				<span class="toggle-switch-text toggle-switch-text-right">{$helperTextRight}</span>
+			{/if}
+
+			{if isNonnull($helperTextBottom)}
+				<span class="toggle-switch-text">{$helperTextBottom}</span>
+			{/if}
+		</label>
+	</div>
+{/template}
